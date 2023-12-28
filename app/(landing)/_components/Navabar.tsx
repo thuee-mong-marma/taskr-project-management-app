@@ -14,10 +14,10 @@ export const Navbar = () => {
             variant="outline"
             asChild
           >
-            <Link href="/sign-in">Log In</Link>
+            <Link href="/login">Log In</Link>
           </Button>
           <Button className="bg-teal-600 border hover:bg-white hover:border-teal-600 hover:text-teal-600">
-            <Link href="/sign-up">Get TaskR for Free</Link>
+            <Link href="/register">Get TaskR for Free</Link>
           </Button>
         </div>
       </div>

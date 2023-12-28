@@ -1,10 +1,8 @@
-import Logo from '@/components/Logo';
 import LocalFont from '@/components/fonts/LocalFont';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Medal } from 'lucide-react';
 import { Poppins } from 'next/font/google';
-import localFont from 'next/font/local';
 import Link from 'next/link';
 
 const poppinsFont = Poppins({
@@ -42,8 +40,8 @@ const HomePage = () => {
           productivity. Revolutionize the way you work and conquer challenges
           with TaskR.
         </div>
-        <Button className="mt-6 bg-teal-600 border-teal-600 hover:bg-white hover:text-teal-600 ">
-          <Link href="/sign-up">Get started for Free</Link>
+        <Button className="mt-6 px-6 bg-white border text-teal-600 text-md hover:bg-transparent hover:text-white hover:border-teal-600">
+          <Link href="/register">Get started for Free</Link>
         </Button>
       </div>
     </div>
