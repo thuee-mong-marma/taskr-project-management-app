@@ -40,7 +40,7 @@ const HomePage = () => {
           productivity. Revolutionize the way you work and conquer challenges
           with TaskR.
         </div>
-        <Button className="mt-6 px-6 bg-white border text-teal-600 text-md hover:bg-transparent hover:text-white hover:border-teal-600">
+        <Button className="mt-6 px-6" variant="secondary" size="lg">
           <Link href="/register">Get started for Free</Link>
         </Button>
       </div>

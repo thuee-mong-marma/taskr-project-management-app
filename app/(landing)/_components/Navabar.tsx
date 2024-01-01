@@ -8,15 +8,10 @@ export const Navbar = () => {
       <div className="md:max-w-screen-2xl mx-auto flex items-center w-full justify-between">
         <Logo />
         <div className="space-x-4 md:block md:w-auto flex items-center justify-between w-full">
-          <Button
-            className="bg-white border text-teal-600 border-teal-600 hover:bg-teal-600 hover:border-teal-600 hover:text-white"
-            size="sm"
-            variant="outline"
-            asChild
-          >
+          <Button size="sm" variant="secondary" asChild>
             <Link href="/login">Log In</Link>
           </Button>
-          <Button className="bg-teal-600 border hover:bg-white hover:border-teal-600 hover:text-teal-600">
+          <Button variant="primary" size="sm">
             <Link href="/register">Get TaskR for Free</Link>
           </Button>
         </div>

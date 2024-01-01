@@ -1,11 +1,15 @@
 import { Navbar } from './_components/Navbar';
-const OrganizationLayout = ({ children }: { children: React.ReactNode }) => {
+const RootOrganizationLayout = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   return (
-    <div className="h-full">
+    <div className="h-full bg-white text-black">
       <Navbar />
       {children}
     </div>
   );
 };
 
-export default OrganizationLayout;
+export default RootOrganizationLayout;
