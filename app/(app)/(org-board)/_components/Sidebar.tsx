@@ -2,7 +2,6 @@
 
 import { useOrganization, useOrganizationList } from '@clerk/nextjs';
 import Link from 'next/link';
-import { useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 
 import { Accordion } from '@/components/ui/accordion';
@@ -41,7 +40,7 @@ export const Sidebar = ({ storageKey = 't-sidebar-state' }: SidebarProps) => {
   const onExpand = (id: string) => {
     setExpanded((curr) => ({
       ...curr,
-      [id]: !expanded,
+      [id]: !expanded[id],
     }));
   };
 

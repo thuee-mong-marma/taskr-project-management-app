@@ -9,7 +9,6 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Activity, CreditCard, Layout, Settings } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export type Organization = {
@@ -28,8 +27,8 @@ interface SidebarItemProps {
 
 type Route = {
   label: string;
-  icon: JSX.Element;
-  route: string;
+  icon: React.ReactNode;
+  href: string;
 };
 
 export const SidebarItem = ({
@@ -40,40 +39,40 @@ export const SidebarItem = ({
 }: SidebarItemProps) => {
   const router = useRouter();
 
-  const staticRouteURL: string = `/organization/${organization.id}`;
+  const staticRouteURL: string = `/org/${organization.id}`;
 
   const routes: Route[] = [
     {
       label: 'Boards',
       icon: <Layout className="h-4 w-4 mr-2" />,
-      route: `${staticRouteURL}`,
+      href: `${staticRouteURL}`,
     },
     {
       label: 'Activity',
       icon: <Activity className="h-4 w-4 mr-2" />,
-      route: `${staticRouteURL}/activity`,
+      href: `${staticRouteURL}/activity`,
     },
     {
       label: 'Settings',
       icon: <Settings className="h-4 w-4 mr-2" />,
-      route: `${staticRouteURL}/settings`,
+      href: `${staticRouteURL}/settings`,
     },
     {
       label: 'Billing',
       icon: <CreditCard className="h-4 w-4 mr-2" />,
-      route: `${staticRouteURL}/billing`,
+      href: `${staticRouteURL}/billing`,
     },
   ];
 
-  //   const onAccordionSubItemClick = (href: string) => router.push(href)
+  const onAccordionSubItemClick = (href: string) => router.push(href);
 
   return (
     <AccordionItem value={organization.id} className="border-none">
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
-          'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-teal-600/30 transition text-start no-underline hover:no-underline',
-          isActive && !isExpanded && 'bg-teal-600/30 text-white'
+          'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-teal-600 hover:text-white transition text-start no-underline hover:no-underline',
+          isActive && !isExpanded && 'bg-teal-600 text-white'
         )}
       >
         <div className="flex items-center gap-x-2">
@@ -94,11 +93,11 @@ export const SidebarItem = ({
             key={route.label}
             size="sm"
             className={cn('w-full font-normal justify-start pl-10')}
+            variant="ghost"
+            onClick={() => onAccordionSubItemClick(route.href)}
           >
-            <Link href={route.route}>
-              {route.icon}
-              <span>{route.label}</span>
-            </Link>
+            {route.icon}
+            <span>{route.label}</span>
           </Button>
         ))}
       </AccordionContent>

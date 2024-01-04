@@ -7,7 +7,7 @@ import SiteLogo from '../public/logo.svg';
 export const Logo = () => {
   return (
     <Link href="/">
-      <div className="items-center hover:opacity-75 transition gap-x-2 hidden md:flex">
+      <div className="items-center hover:opacity-75 transition gap-x-2 hidden sm:flex">
         <SiteLogo className="h-[30px] w-[30px]" alt="site-logo" />
         <p
           className={cn(
