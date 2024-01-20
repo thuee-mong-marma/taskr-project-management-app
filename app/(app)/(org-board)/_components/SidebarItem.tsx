@@ -73,7 +73,7 @@ export const SidebarItem = ({
         onClick={() => onExpand(organization.id)}
         className={cn(
           'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-teal-600/70 hover:text-white transition text-start no-underline hover:no-underline',
-          isActive && 'bg-teal-600/70 text-white'
+          isActive && 'bg-teal-600 text-white'
         )}
       >
         <div className="flex items-center gap-x-2">

@@ -2,9 +2,9 @@
 
 import { createBoard } from '@/actions/create-board';
 import { FormSubmit } from '@/components/form/FormButton';
-import { useAction } from '@/hooks/useAction';
-
 import { FormInput } from '@/components/form/FormInput';
+import { useAction } from '@/hooks/useAction';
+import { toast } from 'sonner';
 
 export const Form = () => {
   const { execute, fieldErrors } = useAction(createBoard, {
