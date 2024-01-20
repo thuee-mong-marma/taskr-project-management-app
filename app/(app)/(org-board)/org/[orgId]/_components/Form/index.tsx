@@ -6,7 +6,7 @@ import { useAction } from '@/hooks/useAction';
 
 import { FormInput } from '@/components/form/FormInput';
 
-export const BoardForm = () => {
+export const Form = () => {
   const { execute, fieldErrors } = useAction(createBoard, {
     onSuccess: (data) => {
       console.log('data', data);
