@@ -18,8 +18,7 @@ const buttonVariants = cva(
           'bg-white text-teal-600 border border-teal-600 hover:bg-teal-600 hover:text-white',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
-        primary:
-          'border border-teal-600 bg-teal-600 text-white hover:bg-white hover:text-teal-600',
+        primary: 'bg-teal-600 text-white hover:bg-teal-600/90 ',
         transparent: 'bg-transparent text-white hover:bg-white/20',
       },
       size: {
