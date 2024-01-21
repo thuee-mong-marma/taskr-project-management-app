@@ -8,15 +8,36 @@ import { CreateBoard } from './schema';
 import { InputType, ReturnType } from './types';
 
 const handler = async (data: InputType): Promise<ReturnType> => {
-  const { userId } = auth();
+  const { userId, orgId } = auth();
 
-  if (!userId) {
+  if (!userId || !orgId) {
     return {
       error: 'Auth Error: Unauthorized',
     };
   }
 
-  const { title } = data;
+  const { title, image } = data;
+  const [imageId, imageUserName, imageThumbURL, imageFullURL, imageLinkHTML] =
+    image.split('|');
+  console.log({
+    imageId,
+    imageUserName,
+    imageThumbURL,
+    imageFullURL,
+    imageLinkHTML,
+  });
+
+  if (
+    !imageId ||
+    !imageUserName ||
+    !imageThumbURL ||
+    !imageFullURL ||
+    !imageLinkHTML
+  ) {
+    return {
+      error: 'Missing fields. Failed to create board',
+    };
+  }
 
   let board;
 
@@ -24,6 +45,12 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     board = await prismadb.board.create({
       data: {
         title,
+        orgId,
+        imageId,
+        imageThumbURL,
+        imageFullURL,
+        imageUserName,
+        imageLinkHTML,
       },
     });
   } catch (err) {
