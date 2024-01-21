@@ -10,12 +10,15 @@ import { useEffect, useState } from 'react';
 import { useFormStatus } from 'react-dom';
 import { FormError } from './FormError';
 
-interface FormPickerProps {
+interface BoardCreateImagePickerProps {
   id: string;
   errors?: Record<string, string[] | undefined>;
 }
 
-const FormPicker = ({ id, errors }: FormPickerProps) => {
+const BoardCreateImagePicker = ({
+  id,
+  errors,
+}: BoardCreateImagePickerProps) => {
   const { pending } = useFormStatus();
   const [images, setImages] = useState<Array<Record<string, any>>>([]);
   const [isLoading, setLoading] = useState<boolean>(false);
@@ -102,4 +105,4 @@ const FormPicker = ({ id, errors }: FormPickerProps) => {
   );
 };
 
-export default FormPicker;
+export default BoardCreateImagePicker;

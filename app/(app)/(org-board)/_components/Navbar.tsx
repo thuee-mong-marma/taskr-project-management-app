@@ -1,7 +1,7 @@
 import { Logo } from '@/components/Logo';
+import BoardCreatePopover from '@/components/form/BoardCreateFormPopover';
 import { Button } from '@/components/ui/button';
 import { OrganizationSwitcher, UserButton } from '@clerk/nextjs';
-import Link from 'next/link';
 import { MobileSideBar } from './MobileSidebar';
 
 export const Navbar = () => {
@@ -13,11 +13,11 @@ export const Navbar = () => {
           <Logo />
         </div>
         <div className="flex items-center gap-x-2 w-auto justify-between md:justify-normal">
-          <Link href="/create-org">
+          <BoardCreatePopover align="start" side="bottom" sideOffset={18}>
             <Button size="sm" variant="primary" className="h-auto py-1.5 px-2">
               Create
             </Button>
-          </Link>
+          </BoardCreatePopover>
           <OrganizationSwitcher
             hidePersonal
             afterCreateOrganizationUrl="/org/:id"

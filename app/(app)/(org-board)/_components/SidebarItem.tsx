@@ -10,7 +10,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import { cn } from '@/lib/utils';
 import { Activity, CreditCard, Layout, Settings } from 'lucide-react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 export type Organization = {
   id: string;
@@ -39,6 +39,7 @@ export const SidebarItem = ({
   onExpand,
 }: SidebarItemProps) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const staticRouteURL: string = `/org/${organization.id}`;
 
@@ -72,8 +73,7 @@ export const SidebarItem = ({
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
-          'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-teal-600/70 hover:text-white transition text-start no-underline hover:no-underline',
-          isActive && 'bg-teal-600 text-white'
+          'flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-teal-600/70 hover:text-white transition text-start no-underline hover:no-underline'
         )}
       >
         <div className="flex items-center gap-x-2">
@@ -88,13 +88,14 @@ export const SidebarItem = ({
           <span className="font-medium text-sm">{organization.name}</span>
         </div>
       </AccordionTrigger>
-      <AccordionContent>
+      <AccordionContent className="pt-1">
         {routes.map((route) => (
           <Button
             key={route.label}
             size="sm"
             className={cn(
-              'w-full font-normal justify-start pl-10 text-neutral-700'
+              'w-full font-normal justify-start pl-10 mt-1 text-neutral-700 hover:bg-teal-600/20 hover:text-teal-600',
+              pathname === route.href && 'bg-teal-600/20 text-teal-600'
             )}
             variant="ghost"
             onClick={() => onAccordionSubItemClick(route.href)}

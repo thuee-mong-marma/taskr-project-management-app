@@ -1,6 +1,6 @@
 'use client';
 
-import { createBoard } from '@/actions/create-board';
+import { createBoard } from '@/actions/boardActions/createBoard';
 import { FormSubmit } from '@/components/form/FormButton';
 import { FormInput } from '@/components/form/FormInput';
 import { Button } from '@/components/ui/button';
@@ -15,21 +15,21 @@ import { X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { ElementRef, useRef } from 'react';
 import { toast } from 'sonner';
-import FormPicker from './FormPicker';
+import BoardCreateImagePicker from './BoardCreateImagePicker';
 
-interface FormPopoverProps {
+interface BoardCreatePopoverProps {
   children: React.ReactNode;
   side?: 'top' | 'bottom' | 'left' | 'right';
   align?: 'start' | 'end' | 'center';
   sideOffset?: number;
 }
 
-const FormPopover = ({
+const BoardCreatePopover = ({
   children,
   side,
   align,
   sideOffset,
-}: FormPopoverProps) => {
+}: BoardCreatePopoverProps) => {
   const router = useRouter();
   const closeRef = useRef<ElementRef<'button'>>(null);
   const { execute, fieldErrors } = useAction(createBoard, {
@@ -75,7 +75,7 @@ const FormPopover = ({
         </PopoverClose>
         <form action={onSubmit} className="space-y-4">
           <div className="space-y-4">
-            <FormPicker id="image" errors={fieldErrors} />
+            <BoardCreateImagePicker id="image" errors={fieldErrors} />
             <FormInput
               id="title"
               label="Board Title"
@@ -90,4 +90,4 @@ const FormPopover = ({
   );
 };
 
-export default FormPopover;
+export default BoardCreatePopover;
