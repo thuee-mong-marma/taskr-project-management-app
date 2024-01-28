@@ -78,7 +78,7 @@ const ListForm = () => {
           <div className="flex items-center gap-x-2">
             <FormSubmit className="w-full">Add List</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="destructive">
-              Cancel
+              <X className="h-4 w-4" />
             </Button>
           </div>
         </form>
