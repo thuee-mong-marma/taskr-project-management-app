@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { ElementRef, useRef, useState } from 'react';
 import { toast } from 'sonner';
 import { useEventListener, useOnClickOutside } from 'usehooks-ts';
+import { ListOptions } from './ListOptions';
 
 interface ListHeaderProps {
   data: List;
@@ -69,7 +70,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
   };
 
   return (
-    <div className="pt-2 px-2 text-sm font-semibold flex justify-between items-start gap-x-2">
+    <div className="p-2 text-sm font-semibold flex justify-between items-start gap-x-2">
       {isEditing ? (
         <form action={onSubmit} ref={formRef} className="flex-1 px-[2px]">
           <input hidden id="id" name="id" value={data.id} />
@@ -92,6 +93,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
+      <ListOptions data={data} onAddCard={() => {}} />
     </div>
   );
 };

@@ -31,7 +31,7 @@ const BoardOptions = ({ id }: BoardOptionsProps) => {
     <Popover>
       <PopoverTrigger asChild>
         <Button className="h-auto w-auto p-2" variant="transparent">
-          <MoreHorizontal className="h-4 w-4" />
+          <MoreHorizontal className="icon" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="p-3" side="bottom" align="start">
@@ -43,7 +43,7 @@ const BoardOptions = ({ id }: BoardOptionsProps) => {
             className="h-auto w-auto p-2 absolute top-3 right-3 text-neutral-600"
             variant="ghost"
           >
-            <X className="h-4 w-4" />
+            <X className="icon" />
           </Button>
         </PopoverClose>
         <Button

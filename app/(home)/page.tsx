@@ -35,8 +35,8 @@ const HomePage = () => {
             poppinsFont.className
           )}
         >
-          Elevate your team's unique workstyle, from high-rises to home offices.
-          Unleash unparalleled collaboration, project management, and
+          Elevate your team&apos;s unique workstyle, from high-rises to home
+          offices. Unleash unparalleled collaboration, project management, and
           productivity. Revolutionize the way you work and conquer challenges
           with TaskR.
         </div>

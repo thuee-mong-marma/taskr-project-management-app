@@ -78,7 +78,7 @@ const ListForm = () => {
           <div className="flex items-center gap-x-2">
             <FormSubmit className="w-full">Add List</FormSubmit>
             <Button onClick={disableEditing} size="sm" variant="destructive">
-              <X className="h-4 w-4" />
+              <X className="icon" />
             </Button>
           </div>
         </form>
@@ -93,7 +93,7 @@ const ListForm = () => {
         role="button"
         onClick={enableEditing}
       >
-        <Plus className="h-4 w-4 mr-2" />
+        <Plus className="icon mr-2" />
         <span>Add a list</span>
       </button>
     </ListWrapper>

@@ -46,22 +46,22 @@ export const SidebarItem = ({
   const routes: Route[] = [
     {
       label: 'Boards',
-      icon: <Layout className="h-4 w-4 mr-2" />,
+      icon: <Layout className="icon mr-2" />,
       href: `${staticRouteURL}`,
     },
     {
       label: 'Activity',
-      icon: <Activity className="h-4 w-4 mr-2" />,
+      icon: <Activity className="icon mr-2" />,
       href: `${staticRouteURL}/activity`,
     },
     {
       label: 'Settings',
-      icon: <Settings className="h-4 w-4 mr-2" />,
+      icon: <Settings className="icon mr-2" />,
       href: `${staticRouteURL}/settings`,
     },
     {
       label: 'Billing',
-      icon: <CreditCard className="h-4 w-4 mr-2" />,
+      icon: <CreditCard className="icon mr-2" />,
       href: `${staticRouteURL}/billing`,
     },
   ];

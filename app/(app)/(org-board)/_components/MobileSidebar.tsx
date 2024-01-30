@@ -35,7 +35,7 @@ export const MobileSideBar = () => {
         variant="ghost"
         size="sm"
       >
-        <Menu className="h-4 w-4" />
+        <Menu className="icon" />
       </Button>
       <Sheet open={isOpen} onOpenChange={onClose}>
         <SheetContent className="p-2 pt-10" side="left">

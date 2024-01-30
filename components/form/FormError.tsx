@@ -21,7 +21,7 @@ export const FormError = ({ id, error, className }: FormErrorProps) => {
           key={error}
           className="flex items-center p-2 border border-rose-500 bg-rose-500/10 rounded-sm"
         >
-          <XCircleIcon className="h-4 w-4 mr-2" />
+          <XCircleIcon className="icon mr-2" />
           {error}
         </div>
       ))}

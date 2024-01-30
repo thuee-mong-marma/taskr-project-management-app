@@ -70,7 +70,7 @@ const BoardCreatePopover = ({
             className="h-auto w-auto p-2 absolute top-2 right-2"
             variant="ghost"
           >
-            <X className="h-4 w-4" />
+            <X className="icon" />
           </Button>
         </PopoverClose>
         <form action={onSubmit} className="space-y-4">
