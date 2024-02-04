@@ -34,8 +34,8 @@ const BoardRootPage = async ({ params }: BoardRootPageProps) => {
     },
   });
 
-  if (!lists) {
-  }
+  // if (!lists) {
+  // }
 
   return (
     <div className="p-4 h-full overflow-x-auto">

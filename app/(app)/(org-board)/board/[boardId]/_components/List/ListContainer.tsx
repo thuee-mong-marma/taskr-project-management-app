@@ -1,6 +1,6 @@
 'use client';
 
-import { ListWithCards } from '@/types';
+import { ListWithCards } from '@/types/types';
 import { useEffect, useState } from 'react';
 import ListForm from './ListForm';
 import ListItem from './ListItem';
