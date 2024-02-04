@@ -19,19 +19,19 @@ const HomePage = () => {
           LocalFont.className
         )}
       >
-        <div className="icon mb-4 flex items-center border border-teal-300 shadow-sm p-4 bg-transparent text-white rounded-full uppercase">
+        <div className="mb-4 flex items-center border border-teal-300 shadow-sm p-4 bg-transparent text-teal-300 rounded-full uppercase">
           <Medal className="h-6 w-6 mr-2" />
           <span>Task management app of the century</span>
         </div>
         <h1 className="text-3xl md:text-6xl text-center mb-6">
-          TaskR helps team move
+          TaskR helps team move and
         </h1>
         <div className="text-3xl md:text-6xl bg-gradient-to-r from-teal-300 to-teal-600 text-white py-4 px-4 rounded-md w-fit">
           Work Forward.
         </div>
         <div
           className={cn(
-            'text-sm md:text-xl mt-4 text-neutral-300 max-w-xs md:max-w-2xl text-center mx-auto',
+            'text-sm md:text-xl mt-4 text-black max-w-xs md:max-w-2xl text-center mx-auto',
             poppinsFont.className
           )}
         >
@@ -40,7 +40,7 @@ const HomePage = () => {
           productivity. Revolutionize the way you work and conquer challenges
           with TaskR.
         </div>
-        <Button className="mt-6 px-6" variant="secondary" size="lg">
+        <Button className="mt-6 px-6" variant="primary" size="lg">
           <Link href="/register">Get started for Free</Link>
         </Button>
       </div>

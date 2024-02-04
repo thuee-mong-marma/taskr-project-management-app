@@ -1,5 +1,6 @@
 {
   "name": "taskr",
+  "author": "mong",
   "version": "1.0.0",
   "private": true,
   "scripts": {
