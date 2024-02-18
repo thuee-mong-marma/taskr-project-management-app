@@ -16,7 +16,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     };
   }
 
-  const { title, id, boardId } = data;
+  const { title,id, boardId } = data;
 
   let list;
 
@@ -33,10 +33,11 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         title,
       },
     });
-  } catch (err) {
+
+  } catch (error) {
     return {
-      error: 'Failed to update list',
-    };
+      error: "Failed to update list."
+    }
   }
 
   revalidatePath(`/board/${boardId}`);

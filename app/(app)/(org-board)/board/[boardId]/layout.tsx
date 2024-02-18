@@ -36,7 +36,6 @@ export async function generateMetadata({
 }
 
 const BoardRootLayout = async ({ children, params }: BoardRootLayoutProps) => {
-  console.log('params', params);
   const { orgId } = auth();
 
   if (!orgId) {
