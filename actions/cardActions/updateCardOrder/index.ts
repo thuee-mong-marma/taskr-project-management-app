@@ -6,7 +6,7 @@ import { revalidatePath } from 'next/cache';
 import { createAction } from '@/lib/createAction';
 import { prismadb } from '@/lib/db';
 
-import { UpdateListOrder } from './schema';
+import { UpdateCardOrder } from './schema';
 import { InputType, ReturnType } from './types';
 
 const handler = async (data: InputType): Promise<ReturnType> => {
@@ -20,25 +20,27 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   const { items, boardId } = data;
 
-  let lists;
+  let updateCards;
 
   try {
-    const transaction = items.map((list) => (
-      prismadb.list.update({
+    const transaction = items.map((card) => (
+      prismadb.card.update({
         where: {
-          id: list.id,
-          board: {
-            orgId
+          id:card.id,
+          list: {
+            board: {
+              orgId
+            }
           }
         },
         data: {
-          order: list.order,
+          order: card.order,
+          listId: card.listId,
         }
       })
     ))
 
-    lists = await prismadb.$transaction(transaction);
-
+    updateCards = await prismadb.$transaction(transaction);
 
   } catch (err) {
     return {
@@ -48,7 +50,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
 
   revalidatePath(`/board/${boardId}`);
 
-  return { data: lists };
+  return { data: updateCards };
 };
 
-export const updateListOrder = createAction(UpdateListOrder, handler);
+export const updateCardOrder = createAction(UpdateCardOrder, handler);

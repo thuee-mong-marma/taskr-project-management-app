@@ -7,6 +7,7 @@ import ListItem from "./ListItem";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 import { useAction } from "@/hooks/useAction";
 import { updateListOrder } from "@/actions/listActions/updateListOrder";
+import {updateCardOrder} from "@/actions/cardActions/updateCardOrder";
 import { toast } from "sonner";
 
 interface ListContainerProps {
@@ -31,6 +32,15 @@ export const ListContainer = ({ boardId, data }: ListContainerProps) => {
     },
     onError: () => {
       toast.error("Failed to reorder list");
+    }
+  });
+
+  const {execute: executeUpdateCardOrder} = useAction(updateCardOrder, {
+    onSuccess: () => {
+      toast.success("Card reordered");
+    },
+    onError: () => {
+      toast.error("Failed to reorder card");
     }
   });
 
@@ -96,8 +106,7 @@ export const ListContainer = ({ boardId, data }: ListContainerProps) => {
         sourceList.cards = reorderedCards;
 
         setOrderedData(newOrderedData);
-
-        //TODO: trigger server actions
+        executeUpdateCardOrder({ items: reorderedCards, boardId });
         //user moves card to another list
       } else {
         //firstly remove the card from the source list
@@ -115,7 +124,7 @@ export const ListContainer = ({ boardId, data }: ListContainerProps) => {
         destinationList.cards.forEach((card, idx) => (card.order = idx));
 
         setOrderedData(newOrderedData);
-        //TODO: trigger server actions
+        executeUpdateCardOrder({ items: destinationList.cards, boardId });
       }
     }
   };

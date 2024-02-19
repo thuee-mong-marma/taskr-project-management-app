@@ -1,9 +1,9 @@
-import { List } from '@prisma/client';
+import { Card } from '@prisma/client';
 import { z } from 'zod';
 
 import { ActionState } from '@/lib/createAction';
-import { UpdateListOrder } from './schema';
+import { UpdateCardOrder } from './schema';
 
-export type InputType = z.infer<typeof UpdateListOrder>;
+export type InputType = z.infer<typeof UpdateCardOrder>;
 
-export type ReturnType = ActionState<InputType, List[]>;
+export type ReturnType = ActionState<InputType, Card[]>;
