@@ -8,6 +8,7 @@ import { ModalHeader } from "./Header";
 import { useQuery } from "react-query";
 import { CardDescription } from "./Description";
 import CardActions from "./Actions";
+import { AuditLog } from "@prisma/client";
 
 export const CardModal = () => {
   const id = useCardModal((state) => state.id);
@@ -17,6 +18,11 @@ export const CardModal = () => {
   const { data: cardData } = useQuery<CardsWithList>({
     queryKey: ["card", id],
     queryFn: () => fetcher(`/api/cards/${id}`),
+  });
+
+  const { data: cardAuditLogsData } = useQuery<AuditLog[]>({
+    queryKey: ["card-audit-logs", id],
+    queryFn: () => fetcher(`/api/cards/${id}/logs`),
   });
 
   if (!cardData) {
