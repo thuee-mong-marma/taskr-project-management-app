@@ -1,7 +1,9 @@
+'use client'
+
 import LocalFont from '@/components/fonts/LocalFont';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import SiteLogo from '../public/logo.svg';
+import SiteLogo from '../public/Logo.svg';
 
 export const Logo = () => {
   return (
