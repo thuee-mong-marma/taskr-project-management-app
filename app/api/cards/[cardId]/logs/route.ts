@@ -1,5 +1,5 @@
 import { prismadb } from "@/lib/db"
-import { auth, useAuth } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs"
 import { ENTITY_TYPE } from "@prisma/client"
 import { NextResponse } from "next/server"
 

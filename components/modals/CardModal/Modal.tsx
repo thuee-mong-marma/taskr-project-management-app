@@ -9,6 +9,7 @@ import { useQuery } from "react-query";
 import { CardDescription } from "./Description";
 import CardActions from "./Actions";
 import { AuditLog } from "@prisma/client";
+import { Activity } from "./Activity";
 
 export const CardModal = () => {
   const id = useCardModal((state) => state.id);
@@ -47,6 +48,13 @@ export const CardModal = () => {
             <CardActions.Skeleton />
           ) : (
             <CardActions data={cardData} />
+          )}
+        </div>
+        <div>
+          {!cardAuditLogsData ? (
+            <Activity.Skeleton />
+          ) : (
+            <Activity cardId={id as string} />
           )}
         </div>
       </DialogContent>

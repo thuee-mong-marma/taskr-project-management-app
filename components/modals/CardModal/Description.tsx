@@ -90,7 +90,7 @@ export const CardDescription = ({ data }: CardDescriptionProps) => {
         ) : (
           <div
             role="button"
-            className="min-h-[78px] bg-neutral-200 text-sm font-medium py-3 px-3.5 rounded-md"
+            className="min-h-[78px] bg-skeleton text-sm font-medium py-3 px-3.5 rounded-md"
             onClick={enableEditing}
           >
             {data.description || "Add a detailed description..."}
@@ -104,10 +104,10 @@ export const CardDescription = ({ data }: CardDescriptionProps) => {
 CardDescription.Skeleton = function CardDescriptionSkeleton() {
   return (
     <div className="flex items-start gap-x-3 w-full">
-      <Skeleton className="h-6 w-6 bg-neutral-200" />
+      <Skeleton className="h-6 w-6 bg-skeleton" />
       <div className="w-full">
-        <Skeleton className="w-24 h-6 mb-2 bg-neutral-200" />
-        <Skeleton className="w-full h-[78px] bg-neutral-200" />
+        <Skeleton className="w-24 h-6 mb-2 bg-skeleton" />
+        <Skeleton className="w-full h-[78px] bg-skeleton" />
       </div>
     </div>
   );
