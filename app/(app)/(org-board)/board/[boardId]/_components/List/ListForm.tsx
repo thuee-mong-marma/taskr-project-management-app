@@ -1,6 +1,6 @@
 'use client';
 
-import { createList } from '@/actions/listActions/createList/';
+import { createList } from '@/actions/listActions/create';
 import { FormSubmit } from '@/components/form/FormButton';
 import { FormInput } from '@/components/form/FormInput';
 import { Button } from '@/components/ui/button';

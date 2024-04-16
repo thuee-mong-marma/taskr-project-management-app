@@ -1,6 +1,6 @@
 'use client';
 
-import { updateList } from '@/actions/listActions/updateList';
+import { updateList } from '@/actions/listActions/update';
 import { FormInput } from '@/components/form/FormInput';
 import { useAction } from '@/hooks/useAction';
 import { List } from '@prisma/client';

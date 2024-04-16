@@ -1,6 +1,6 @@
 'use client';
 
-import { createBoard } from '@/actions/boardActions/createBoard';
+import { createBoard } from '@/actions/boardActions/create';
 import { FormSubmit } from '@/components/form/FormButton';
 import { FormInput } from '@/components/form/FormInput';
 import { Button } from '@/components/ui/button';

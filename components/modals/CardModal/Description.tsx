@@ -11,7 +11,7 @@ import { FormTextarea } from "@/components/form/FormTextarea";
 import { FormSubmit } from "@/components/form/FormButton";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/useAction";
-import { updateCard } from "@/actions/cardActions/updateCard";
+import { updateCard } from "@/actions/cardActions/update";
 import { toast } from "sonner";
 
 export interface CardDescriptionProps {

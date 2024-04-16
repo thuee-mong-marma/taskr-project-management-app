@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAction } from "@/hooks/useAction";
 import { useCardModal } from "@/hooks/useCardModal";
-import { copyCard } from "@/actions/cardActions/copyCard";
-import { deleteCard } from "@/actions/cardActions/deleteCard";
+import { copyCard } from "@/actions/cardActions/copy";
+import { deleteCard } from "@/actions/cardActions/delete";
 import { CardsWithList } from "@/types/types";
 
 interface CardActionsProps {

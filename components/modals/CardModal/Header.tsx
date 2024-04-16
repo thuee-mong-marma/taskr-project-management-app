@@ -8,7 +8,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useParams } from "next/navigation";
 import { useQueryClient } from "react-query";
 import { useAction } from "@/hooks/useAction";
-import { updateCard } from "@/actions/cardActions/updateCard";
+import { updateCard } from "@/actions/cardActions/update";
 import { toast } from "sonner";
 
 interface CardModalHeaderProps {

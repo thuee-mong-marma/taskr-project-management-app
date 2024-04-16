@@ -6,8 +6,8 @@ import ListForm from "./ListForm";
 import ListItem from "./ListItem";
 import { DragDropContext, Droppable } from "@hello-pangea/dnd";
 import { useAction } from "@/hooks/useAction";
-import { updateListOrder } from "@/actions/listActions/updateListOrder";
-import {updateCardOrder} from "@/actions/cardActions/updateCardOrder";
+import { updateListOrder } from "@/actions/listActions/update-order";
+import {updateCardOrder} from "@/actions/cardActions/update-order";
 import { toast } from "sonner";
 
 interface ListContainerProps {

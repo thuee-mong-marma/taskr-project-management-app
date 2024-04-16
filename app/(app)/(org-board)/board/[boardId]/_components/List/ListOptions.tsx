@@ -1,7 +1,7 @@
 'use client';
 
-import { copyList } from '@/actions/listActions/copyList';
-import { deleteList } from '@/actions/listActions/deleteList';
+import { copyList } from '@/actions/listActions/copy';
+import { deleteList } from '@/actions/listActions/delete';
 import { FormSubmit } from '@/components/form/FormButton';
 import { Button } from '@/components/ui/button';
 import {
