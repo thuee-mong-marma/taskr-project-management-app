@@ -13,6 +13,7 @@ import CardLogs from "./Logs";
 import { useQuery } from "react-query";
 import { fetcher } from "@/lib/fetcher";
 import { AuditLog, Comment } from "@prisma/client";
+import { CommentForm } from "../CommentForm";
 
 export const Activity = ({ cardId }: { cardId: string }) => {
 
@@ -26,6 +27,8 @@ export const Activity = ({ cardId }: { cardId: string }) => {
     queryFn: () => fetcher(`/api/cards/${cardId}/comments`)
   })
 
+  console.log('comments', cardCommentsData)
+
   return (
     <div>
       <div className="flex items-start gap-x-3">
@@ -38,6 +41,7 @@ export const Activity = ({ cardId }: { cardId: string }) => {
           <TabsTrigger value="audits">Audits</TabsTrigger>
         </TabsList>
         <TabsContent value='comments'>
+          <CommentForm/>
           <CardComments data={cardCommentsData as Comment[]}/>
         </TabsContent>
         <TabsContent value='audits'>

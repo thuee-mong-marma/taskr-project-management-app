@@ -38,7 +38,6 @@ export const CardDescription = ({ data }: CardDescriptionProps) => {
       console.log(error);
       toast.error("Error updating card description");
     }
-
   });
 
   const enableEditing = () => {
@@ -65,7 +64,6 @@ export const CardDescription = ({ data }: CardDescriptionProps) => {
     const boardId = params.boardId as string;
 
     execute({id: data.id, description, boardId});
-
   };
 
   return (
@@ -81,6 +79,7 @@ export const CardDescription = ({ data }: CardDescriptionProps) => {
               placeholder="Add a more detailed description..."
               defaultValue={data.description || undefined}
               errors={fieldErrors}
+              ref={textareaRef}
             />
             <div className="flex items-center gap-x-2">
               <FormSubmit>Save</FormSubmit>

@@ -38,19 +38,17 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
     },
     ref
   ) => {
-    const {pending} = useFormStatus();
+    const { pending } = useFormStatus();
     return (
       <div className="space-y-2 w-full">
-        <div className="space-y-1 w-full">
-          {label && (
-            <Label
-              htmlFor={id}
-              className="text-xs font-semibold text-neutral-700"
-            >
-              {label}
-            </Label>
-          )}
-        </div>
+        {label && (
+          <Label
+            htmlFor={id}
+            className="text-xs font-semibold text-neutral-700"
+          >
+            {label}
+          </Label>
+        )}
         <Textarea
           onKeyDown={onKeyDown}
           onBlur={onBlur}
@@ -58,7 +56,7 @@ export const FormTextarea = forwardRef<HTMLTextAreaElement, FormTextareaProps>(
           ref={ref}
           required={required}
           name={id}
-          disabled={disabled|| pending}
+          disabled={disabled || pending}
           className={cn(
             "resize-none focus-visible:ring-0 focus-visible:ring-offset-0 ring-0 focus:ring-0 outline-none shadow-sm",
             className

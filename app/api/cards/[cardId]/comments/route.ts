@@ -14,7 +14,6 @@ export async function GET(
     }
     const comments = await prismadb.comment.findMany({
       where: {
-        orgId,
         cardId: params.cardId,
       },
       orderBy: {
