@@ -1,6 +1,6 @@
 "use client";
 
-import { use, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { FormTextarea } from "@/components/form/FormTextarea";
@@ -12,9 +12,12 @@ import { createComment } from "@/actions/commentActions/create";
 import { toast } from "sonner";
 import { useParams } from "next/navigation";
 import { useCardModal } from "@/hooks/useCardModal";
+import { useQueryClient } from "react-query";
+
 
 export const CommentForm = () => {
   const { user } = useUser();
+  const queryClient = useQueryClient();
 
   const formRef = useRef<HTMLFormElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
@@ -25,8 +28,11 @@ export const CommentForm = () => {
   const {id} = useCardModal();
 
   const {execute, fieldErrors} = useAction(createComment, {
-    onSuccess: () => {
+    onSuccess: (data) => {
       toast.success("Comment added successfully");
+      queryClient.invalidateQueries({
+        queryKey: ["card-comments", data.cardId],
+      })
       console.log("Comment created");
       disabledEditing()
     },
