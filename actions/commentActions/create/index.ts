@@ -27,7 +27,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       data: {
         message,
         cardId,
-        boardId,
         userId,
         userImage,
         userName,
