@@ -23,10 +23,10 @@ const HomePage = () => {
           <Medal className="h-6 w-6 mr-2" />
           <span>Task management app of the century</span>
         </div>
-        <h1 className="text-3xl md:text-6xl text-center mb-6">
-          TaskR helps team move and
+        <h1 className="text-5xl md:text-6xl text-center mb-6">
+          TaskR helps team <br className='block md:hidden' />move and
         </h1>
-        <div className="text-3xl md:text-6xl bg-gradient-to-r from-teal-300 to-teal-600 text-white py-4 px-4 rounded-md w-fit">
+        <div className="text-5xl md:text-6xl bg-gradient-to-r from-teal-300 to-teal-600 text-white py-4 px-4 rounded-md w-fit">
           Work Forward.
         </div>
         <div
